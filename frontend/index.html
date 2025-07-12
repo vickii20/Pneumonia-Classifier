@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pneumonia Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Pneumonia Detection</h1>
+        
+        <!-- Form for uploading image -->
+        <form id="uploadForm" enctype="multipart/form-data">
+            <div class="input-group">
+                <label for="fileInput" class="custom-file-button">
+                    <img src="frontend\upload.png" alt="Upload" style="width: 20px; margin-right: 5px;"> Upload Image
+                </label>
+                <input type="file" name="file" id="fileInput" accept="image/*" required>
+                <button type="button" onclick="submitForm()">Predict</button>
+            </div>
+        </form>
+        
+        <!-- Preview of uploaded image -->
+        <div class="image-preview" id="imagePreview" style="display: none;">
+            <img src="" alt="Uploaded Image" id="uploadedImage">
+        </div>
+        
+        <!-- Display prediction result -->
+        <div class="result" id="result"></div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
